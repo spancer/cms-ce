@@ -24,6 +24,11 @@
     <filter-class>com.enonic.cms.web.filter.ASCIICharactersFilter</filter-class>
   </filter>
 
+  <filter>
+    <filter-name>httpHeadFilter</filter-name>
+    <filter-class>com.enonic.cms.web.filter.HttpHeadFilter</filter-class>
+  </filter>
+
   <filter-mapping>
     <filter-name>compositeFilter</filter-name>
     <url-pattern>/*</url-pattern>
@@ -32,6 +37,12 @@
   <filter-mapping>
     <filter-name>asciiCharactersFilter</filter-name>
     <url-pattern>/admin/adminpage</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>httpHeadFilter</filter-name>
+    <url-pattern>/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
 
